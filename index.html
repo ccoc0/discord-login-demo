@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5865f2">
+  <title>Discord Login — UI Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="music-widget" id="musicWidget">
+    <div class="music-bubble" role="group" aria-label="Music player">
+      <button class="bubble-art-button" id="bubblePlay" type="button" aria-label="Play selected song">
+        <img id="bubbleCover" src="cover-earrings.jpg" alt="">
+        <span class="bubble-play-icon" aria-hidden="true">▶</span>
+      </button>
+      <div class="bubble-copy" aria-live="polite">
+        <span class="bubble-eyebrow" id="bubbleState">READY TO PLAY</span>
+        <strong id="bubbleTitle">Earrings</strong>
+        <span id="bubbleArtist">Malcolm Todd</span>
+      </div>
+      <div class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <button class="bubble-expand" id="togglePanel" type="button" aria-expanded="false" aria-controls="musicPanel" aria-label="Open music player">⌄</button>
+    </div>
+    <section class="music-panel" id="musicPanel" aria-label="Music player" hidden>
+      <header class="player-header"><span>NOW PLAYING</span><button id="closePanel" type="button" aria-label="Close music player">×</button></header>
+      <img class="player-cover" id="playerCover" src="cover-earrings.jpg" alt="Cover art for Earrings by Malcolm Todd">
+      <div class="player-track-info"><h2 id="playerTitle">Earrings</h2><p id="playerArtist">Malcolm Todd</p><a id="storeLink" href="#" target="_blank" rel="noreferrer" hidden>Open track</a></div>
+      <audio id="audio" preload="metadata"></audio>
+      <div class="seek-row"><span id="currentTime">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek through song"><span id="duration">0:00</span></div>
+      <div class="transport"><button id="previous" type="button" aria-label="Previous track">|◀</button><button id="panelPlay" class="panel-play" type="button" aria-label="Play selected song">▶</button><button id="next" type="button" aria-label="Next track">▶|</button><label class="volume-control" aria-label="Volume">♪<input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></label></div>
+      <div class="playlist-heading"><span>PLAYLIST <b id="trackCount">52 TRACKS</b></span><button id="togglePlaylist" type="button" aria-expanded="false">Show list</button></div>
+      <ol class="playlist" id="playlist" hidden></ol>
+    </section>
+  </div>
+  <main class="login-card" aria-labelledby="welcome-title">
+    <section class="form-panel">
+      <div class="brand" aria-label="Discord demo">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 32"><path d="M33.9 5.4A32 32 0 0 0 26 3l-1 2a29 29 0 0 0-10 0l-1-2a32 32 0 0 0-8 2.4C1 12.8-.4 20  .3 27a32 32 0 0 0 10 5l2.2-3.6-3.5-1.7.9-.7c6.7 3.1 13.9 3.1 20.5 0l.9.7-3.5 1.7L30 32a32 32 0 0 0 10-5c.8-8.1-1.3-15.2-6.1-21.6ZM14.7 22.2c-2 0-3.6-1.8-3.6-4s1.6-4 3.6-4 3.6 1.8 3.6 4-1.6 4-3.6 4Zm10.6 0c-2 0-3.6-1.8-3.6-4s1.6-4 3.6-4 3.6 1.8 3.6 4-1.6 4-3.6 4Z"/></svg></span>
+        <span>discord</span>
+        <span class="demo-tag">UI DEMO</span>
+      </div>
+      <header class="heading">
+        <h1 id="welcome-title">Welcome back!</h1>
+        <p>We're so excited to see you again!</p>
+      </header>
+      <form class="login-form" onsubmit="return false" autocomplete="off">
+        <label for="email">EMAIL OR PHONE NUMBER <span class="required">*</span></label>
+        <input id="email" name="email" type="text" placeholder="name@example.com" autocomplete="off">
+        <label for="password">PASSWORD <span class="required">*</span></label>
+        <input id="password" name="password" type="password" placeholder="••••••••••••" autocomplete="new-password">
+        <a class="forgot" href="#forgot">Forgot your password?</a>
+        <button type="button">Log In</button>
+        <p class="register">Need an account? <a href="#register">Register</a></p>
+      </form>
+      <p class="notice">Demo only · This page does not submit or save anything.</p>
+    </section>
+    <aside class="qr-panel" aria-label="QR login illustration">
+      <div class="qr-wrap">
+        <div class="qr" aria-hidden="true">
+          <i class="finder one"><b></b></i><i class="finder two"><b></b></i><i class="finder three"><b></b></i>
+          <i class="pixel p1"></i><i class="pixel p2"></i><i class="pixel p3"></i><i class="pixel p4"></i><i class="pixel p5"></i><i class="pixel p6"></i><i class="pixel p7"></i><i class="pixel p8"></i><i class="pixel p9"></i><i class="pixel p10"></i><i class="pixel p11"></i><i class="pixel p12"></i><i class="pixel p13"></i>
+          <span class="qr-center">◉</span>
+        </div>
+      </div>
+      <h2>Log in with QR Code</h2>
+      <p>Scan this decorative demo code with your<br class="desktop-only"> mobile app to log in instantly.</p>
+      <div class="qr-caption">ILLUSTRATION ONLY</div>
+    </aside>
+  </main>
+  <script src="playlist-data.js" defer></script>
+  <script src="player.js" defer></script>
+</body>
+</html>
+
+
+
