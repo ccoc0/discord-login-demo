@@ -1,10 +1,10 @@
 # Discord Login UI Demo
 
-A responsive, static HTML/CSS recreation of a Discord-inspired login screen with a floating music player.
+A responsive, static HTML/CSS recreation of a Discord-inspired login screen with a floating music player and a dimmed looping background video.
 
 ## Run it
 
-Open `index.html` in a modern browser. The audio, cover art, and playlist data are stored locally in this folder. Use the top-right player bubble to start a song, open the playlist, skip tracks, seek, and adjust volume. Browsers require a click to start audio.
+Open `index.html` in a modern browser. The background video, audio, cover art, and playlist data are stored locally in this folder. Use the top-right player bubble to start a song, open the playlist, skip tracks, seek, and adjust volume. Browsers require a click to start audio; the background video is muted and loops automatically.
 
 ## Music library
 
